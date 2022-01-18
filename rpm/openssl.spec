@@ -392,6 +392,9 @@ mkdir $RPM_BUILD_ROOT/%{_lib}
 cp -a /%{_lib}/libcrypto.so.%{old_version} $RPM_BUILD_ROOT/%{_lib}/.
 cp -a /%{_lib}/libcrypto.so.%{old_soversion} $RPM_BUILD_ROOT/%{_lib}/.
 %endif
+#----fix libcrypt-->libcrypto
+ln -s libcrypto.pc $RPM_BUILD_ROOT/%{_libdir}/pkgconfig/libcrypt.pc
+############
 
 %files
 %defattr(-,root,root)
